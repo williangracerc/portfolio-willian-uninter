@@ -1,0 +1,186 @@
+/* Meu primeiro CSS! Reset básico para começar do zero. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Isso ajuda muito a não quebrar o layout */
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f4f4f9; /* Um cinza bem clarinho */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilo do cabeçalho fixo */
+header {
+    background-color: #004d99; /* Cor azul inspirada na Uninter */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    position: sticky; /* Pra deixar o menu grudado no topo! */
+    top: 0;
+    z-index: 1000; /* Pra ter certeza que ele fica por cima de tudo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 60px; /* Altura fixa para o botão não pular */
+}
+
+.menu-principal a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu-principal a:hover {
+    color: #ffcc00; /* Amarelo pra destacar */
+}
+
+/* Estilo das seções */
+.secao {
+    padding: 60px 5%; 
+    margin: 20px auto;
+    max-width: 1000px; 
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+h1, h2, h3 {
+    color: #004d99;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: disc;
+    margin-left: 25px;
+}
+li {
+    margin-bottom: 8px;
+}
+
+/* Estilo do Formulário */
+#form-contato {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+#form-contato label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#form-contato input[type="text"],
+#form-contato input[type="email"],
+#form-contato textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+#form-contato input:focus,
+#form-contato textarea:focus {
+    border-color: #004d99;
+    outline: none; 
+}
+
+#form-contato textarea {
+    resize: vertical; 
+    min-height: 100px;
+}
+
+#form-contato button {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#form-contato button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo do rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 30px;
+}
+
+/* Detalhe: Portfólio Card */
+.projeto-card {
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid #ffcc00; 
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+}
+.projeto-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* CORREÇÃO FINAL REFORÇADA: Garante que o link seja formatado */
+.projeto-card p a { /* Seletor mais específico: link dentro de um parágrafo dentro do card */
+    color: #004d99 !important; /* !important força a regra, último recurso */
+    text-decoration: underline !important; 
+    font-weight: normal;
+}
+
+.projeto-card p a:hover {
+    color: #ffcc00 !important; 
+}
+
+/* --- ESTILOS PARA TEMA ESCURO (dark-mode) --- */
+
+/* Estilo do botão do tema */
+#btn-tema {
+    position: absolute; 
+    top: 15px;
+    right: 20px;
+    padding: 8px 15px;
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#btn-tema:hover {
+    background-color: #ffaa00;
+}
+
+/* Quando o body tiver a classe dark-mode, mude as cores principais */
+body.dark-mode {
+    background-color: #121212; 
+    color: #e0e0e0; 
+}
+
+/* Os containers internos (secoes) também devem mudar */
+body.dark-mode .secao {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Títulos ficam mais claros */
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+    color: #0099ff; 
+}
+
+/* Invertendo a cor do cabeçalho */
+body.dark-mode header {
+    background-color: #000;
+}
